@@ -1,17 +1,45 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
 <div id="body">
-  <!--<app-sidebar></app-sidebar>-->
-<div class="container-fluid" >
-  <div class="row">
-    <div class="col-md-12">
-      <app-navbar></app-navbar>
+
+<main>
+  <aside>
+    <div id="title">
+      <i class="fa fa-home"></i> 贾宏宇的博客
     </div>
-    <div class="col-md-12">
-      <router-outlet></router-outlet>
-    </div>
-    <div class="col-md-12" >
-      <app-footer></app-footer>
-    </div>
-  </div>
-</div>
+    <ul class="asideList">
+      <li><a href="" class="asideAnchor"><i class="fa fa-book"></i> 博文</a></li>
+      <li><a href="" class="asideAnchor"><i class="fa fa-bookmark"></i> 标签</a></li>
+      <li><a href="" class="asideAnchor"><i class="fa fa-calendar"></i> 归档</a></li>
+      <li><a href="" class="asideAnchor"><i class="fa fa-info-circle" aria-hidden="true"></i> 关于</a></li>
+    </ul>
+  </aside>
+  <section>
+    <input type="checkbox" id="myInput">
+    <label for="myInput">
+      <span class="bar top"></span>
+      <span class="bar middle"></span>
+      <span class="bar bottom"></span>
+    </label>
+
+    <div class="content">
+
+        <!--<app-sidebar></app-sidebar>-->
+        <div class="container-fluid" >
+          <div class="row">
+            <div class="col-md-12">
+              <app-navbar></app-navbar>
+            </div>
+            <div class="col-md-12">
+              <router-outlet></router-outlet>
+            </div>
+            <div class="col-md-12" >
+              <app-footer></app-footer>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+</main>
+
 </div>

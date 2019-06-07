@@ -7,6 +7,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BlogCardComponent } from './blog-card/blog-card.component';
+import { TimeLineComponent } from './time-line/time-line.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { BlogCardComponent } from './blog-card/blog-card.component';
     FooterComponent,
     NavbarComponent,
     BlogCardComponent,
+    TimeLineComponent,
   ],
   imports: [
     BrowserModule,
