@@ -1,0 +1,37 @@
+<div class="wrapper">
+
+  <h1>文章列表</h1>
+
+  <div *ngFor="let article of articles">
+    <input type="radio" id="tab-{{article.id}}" name="tabs">
+    <label for="tab-{{article.id}}"><div>{{article.title}}</div><div class="cross"></div></label>
+    <div class="content">{{article.content|slice:0:192}}
+      <a class="effect1" href="#">
+        learn more!
+        <span class="bg"></span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="page">
+
+  <div class="pagination">
+
+    <input id="dot-1" type="radio" name="dots" checked="checked" (click)="pageChanged(1)">
+    <label for="dot-1"></label>
+
+    <input *ngFor="let i of dotArr(dotNum).fill(1) ; let ix = index"
+      id="dot-{{ix+2}}" type="radio" name="dots" (click)="pageChanged(ix+2)">
+
+    <label *ngFor="let i of dotArr(dotNum).fill(1) ; let ix = index"
+      for="dot-{{ix+2}}"></label>
+
+    <div class="pacman"></div>
+
+  </div>
+
+</div>

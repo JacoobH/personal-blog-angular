@@ -1,0 +1,21 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {Article} from './article';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ArticleService {
+  private articlesUrl = 'http://localhost:8080/article';
+  constructor(private http: HttpClient) { }
+
+  getArticles (pageNo: number, pageSize: number): Observable<Article[]> {
+    const url = `${this.articlesUrl}/getListByPage?pageNo=${pageNo}&pageSize=${pageSize}`;
+    return this.http.get<Article[]>(url);
+  }
+  getPageNumber(pageSize: number) {
+    const url = `${this.articlesUrl}/getPageNumber?pageSize=${pageSize}`;
+    return this.http.get<number>(url);
+  }
+}
