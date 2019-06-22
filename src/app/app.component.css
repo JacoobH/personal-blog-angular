@@ -6,7 +6,7 @@
   height: 100vh;
   bottom: 0px;
   /*background-image: url("../assets/img/main_background.jpg") ;*/
-  background: antiquewhite;
+  /*background: antiquewhite;*/
 }
 
 #title a{
@@ -29,7 +29,7 @@ main {
 }
 
 aside {
-  background-color: crimson;
+  background-color: #477ebc;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -58,7 +58,7 @@ label {
 
 .bar {
   display: block;
-  background-color: crimson;
+  background-color: #477ebc;
   width: 30px;
   height: 3px;
   border-radius: 5px;
@@ -67,12 +67,13 @@ label {
 }
 
 .content {
+  overflow: auto;
   top: 0;
   bottom: 0;
   position: absolute;
   right: 0;
   left: 0;
-  background: seashell;
+  background: #cdf6fb;
   z-index: 2;
   transition: transform .5s ease-in-out;
 
@@ -124,7 +125,7 @@ h1 {
 }
 
 .asideAnchor:hover {
-  color: crimson;
+  color: #477ebc;
 }
 
 .asideAnchor:hover::after {

@@ -1,5 +1,5 @@
 
-form{
+div{
   position: relative;
   margin-top: 1%;
   top: 25%;
@@ -46,16 +46,16 @@ input{
   transition: all 1s;
 }
 
-form:hover{
+div:hover{
   width: 200px;
   cursor: pointer;
 }
 
-form:hover input{
+div:hover input{
   display: block;
 }
 
-form:hover .fa{
+div:hover .fa{
   background: crimson;
   color: white;
 }

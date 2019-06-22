@@ -6,7 +6,7 @@
     <input type="radio" id="tab-{{article.id}}" name="tabs">
     <label for="tab-{{article.id}}"><div>{{article.title}}</div><div class="cross"></div></label>
     <div class="content">{{article.content|slice:0:192}}
-      <a class="effect1" href="#">
+      <a class="effect1" routerLink="/detail/{{article.id}}">
         learn more!
         <span class="bg"></span>
       </a>

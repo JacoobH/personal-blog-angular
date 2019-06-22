@@ -275,7 +275,7 @@ label {
   margin: 0 10px;
   height: var(--ddim);
   width: var(--ddim);
-  background: #f7b997;
+  background: #fff;
   cursor: pointer;
 }
 

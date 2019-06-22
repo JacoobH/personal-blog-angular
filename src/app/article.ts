@@ -2,7 +2,7 @@ export class Article {
   constructor(
     public id: number,
     public title: string,
-    public date: Date,
+    public time: string,
     public visit: number,
     public content: string
   ) { }

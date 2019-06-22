@@ -1,0 +1,14 @@
+<div>
+  <textarea name="message" [(ngModel)]="commentText" rows="2" class="question" id="msg" required autocomplete="off"></textarea>
+  <label for="msg"><span>添加评论...</span></label>
+  <input type="submit" (click)="addComment(article,commentText)" value="Submit!" />
+</div>
+
+<div *ngFor="let comment of comments" class="blockquote-wrapper">
+  <div class="blockquote">
+    <blockquote>
+      {{comment.content}}
+    </blockquote>
+    <p>&mdash; 游客<br><em>{{comment.time}}</em></p>
+  </div>
+</div>

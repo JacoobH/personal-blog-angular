@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {EventService} from '../../event.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor() { }
+  searchText: string;
+  constructor(private event: EventService) { }
 
   ngOnInit() {
   }
 
+  search(searchText: string) {
+    this.event.changeMessage(searchText);
+  }
 }

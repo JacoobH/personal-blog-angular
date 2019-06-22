@@ -1,5 +1,5 @@
 
-<form>
-  <input id="search" type="search">
-  <i class="fa fa-search"></i>
-</form>
+<div>
+  <label for="search"></label><input [(ngModel)]="searchText" id="search" type="search" >
+  <i class="fa fa-search" (click)="search(searchText)"></i>
+</div>

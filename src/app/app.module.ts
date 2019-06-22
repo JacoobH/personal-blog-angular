@@ -12,6 +12,8 @@ import { ArticleListComponent } from './article-list/article-list.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
+import {EventService} from './event.service';
+import { CommentComponent } from './comment/comment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,7 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
     TimeLineComponent,
     ArticleListComponent,
     ArticleDetailComponent,
+    CommentComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
