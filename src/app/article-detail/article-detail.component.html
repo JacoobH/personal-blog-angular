@@ -3,20 +3,43 @@
   <div class="row">
     <div *ngIf="article" id="article" class="col-md-12">
 
-      <div class="box" id="title">
-        <div class="inner">
-          <span>{{article.title}}</span>
-        </div>
-        <div class="inner">
-          <span>{{article.title}}</span>
+      <!--<div class="box" id="title">-->
+        <!--<div class="inner">-->
+          <!--<span>{{article.title}}</span>-->
+        <!--</div>-->
+        <!--<div class="inner">-->
+          <!--<span>{{article.title}}</span>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--<article>-->
+        <!--{{article.content}}-->
+      <!--</article>-->
+      <!--<button routerLink="/detail/{{article.id-1}}" class="btn striped-shadow white"><span>上一篇</span></button>-->
+      <!--<button routerLink="/detail/{{article.id+1}}" class="btn striped-shadow white"><span>下一篇</span></button>-->
+
+      <div id="wrapper">
+        <div id="container">
+
+          <section class="open-book">
+            <header>
+              <h1>{{article.id}}</h1>
+              <h6>{{article.time}}</h6>
+            </header>
+            <article>
+              <h2 class="chapter-title">{{article.title}}</h2>
+              <p>{{article.content}}</p>
+            </article>
+            <footer>
+              <ol id="page-numbers">
+                <li>1</li>
+                <li>2</li>
+              </ol>
+            </footer>
+          </section>
+
         </div>
       </div>
-
-      <article>
-        {{article.content}}
-      </article>
-      <button routerLink="/detail/{{article.id-1}}" class="btn striped-shadow white"><span>上一篇</span></button>
-      <button routerLink="/detail/{{article.id+1}}" class="btn striped-shadow white"><span>下一篇</span></button>
     </div>
   </div>
   <div class="row">

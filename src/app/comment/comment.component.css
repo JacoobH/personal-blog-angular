@@ -39,7 +39,7 @@ textarea.question + label {
   padding: 0;
   margin: 0;
   width: 10%;
-  border-top: 1px solid red;
+  border-top: 1px solid #cdf6fb;
   -webkit-transition: width 0.4s ease;
   transition: width 0.4s ease;
   height: 0px;
@@ -89,7 +89,7 @@ textarea.question + label > span {
   font-weight: 300;
   margin: 0;
   position: absolute;
-  color: #8F8F8F;
+  color: white;
   font-size: 48px;
   top: -66px;
   left: 0px;

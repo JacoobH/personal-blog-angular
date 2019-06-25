@@ -14,6 +14,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import {EventService} from './event.service';
 import { CommentComponent } from './comment/comment.component';
+import { PlaceOnFileComponent } from './place-on-file/place-on-file.component';
+import { SignFormComponent } from './sign-form/sign-form.component';
+import { ManageComponent } from './manage/manage.component';
+import { MainPageComponent } from './main-page/main-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +28,10 @@ import { CommentComponent } from './comment/comment.component';
     ArticleListComponent,
     ArticleDetailComponent,
     CommentComponent,
+    PlaceOnFileComponent,
+    SignFormComponent,
+    ManageComponent,
+    MainPageComponent,
   ],
   imports: [
     BrowserModule,

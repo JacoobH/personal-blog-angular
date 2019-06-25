@@ -15,7 +15,7 @@ export class CommentComponent implements OnInit, OnChanges {
 
   comments: Comment[];
   pageNo = 1;
-  pageSize = 10;
+  pageSize = 20;
 
 
   constructor(private commentService: CommentService) { }
@@ -38,6 +38,8 @@ export class CommentComponent implements OnInit, OnChanges {
     const comment: Comment = new Comment(article, commentText, this.dateFormat(new Date()));
     this.commentService.addComment(comment)
       .subscribe(comments => comment);
+    // 怎么保证后执行
+    this.getComments(this.pageNo, this.pageSize, this.article);
   }
 
   dateFormat(date: Date): string {

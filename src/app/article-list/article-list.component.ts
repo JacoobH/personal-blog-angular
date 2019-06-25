@@ -15,7 +15,7 @@ export class ArticleListComponent implements OnInit {
 
   articles: Article[];
   pageNo = 1;
-  pageSize = 4;
+  pageSize = 5;
 
   // Array type captured in a variable
   dotArr = Array;
@@ -30,8 +30,8 @@ export class ArticleListComponent implements OnInit {
   }
 
   // 得到页数
-  getPageNumber(pageSize: number) {
-    this.articleService.getPageNumber(pageSize)
+  getPageNumber(pageSize: number, searchText: string) {
+    this.articleService.getPageNumber(pageSize, searchText)
       .subscribe(dotNum => this.dotNum = dotNum - 1);
   }
   // 翻页
@@ -41,7 +41,7 @@ export class ArticleListComponent implements OnInit {
   }
 
   refresh() {
-    this.getPageNumber(this.pageSize);
+    this.getPageNumber(this.pageSize, this.searchText);
     this.getArticles(this.pageNo, this.pageSize, this.searchText);
   }
 
