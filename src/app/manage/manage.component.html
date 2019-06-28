@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <button class="add"><i class="fa fa-plus" aria-hidden="true"></i> 增加</button>
+        <button class="add" routerLink="/editBlog/-1"><i class="fa fa-plus" aria-hidden="true"></i> 增加</button>
         <button class="refresh" (click)="refresh()"><i class="fa fa-refresh" aria-hidden="true"></i> 刷新</button>
 
       </div>
@@ -19,13 +19,13 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">标题</th>
-      <th scope="col">最后编辑时间</th>
+      <th scope="col">发表时间</th>
       <th scope="col">浏览量</th>
       <th scope="col">操作</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let article of articles; index as i">
+    <tr *ngFor="let article of articles; index as i" routerLink="/editBlog/{{article.id}}">
       <th scope="row">{{ article.id }}</th>
       <td>
         <!--<img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">-->
@@ -34,8 +34,10 @@
       <td>{{ article.time }}</td>
       <td>{{ article.visit | number }}</td>
       <td>
-        <button class="modify">修改</button>
-        <button class="remove" (click)="removeArticle(article)">删除</button>
+        <!--<button class="modify" routerLink="/editBlog/{{article.id}}">修改</button>-->
+        <button class="tags" routerLink="/tag/{{article.id}}"><i class="fa fa-tags" aria-hidden="true"></i></button>
+        <button class="comments" routerLink="/tag/{{article.id}}"><i class="fa fa-comments" aria-hidden="true"></i></button>
+        <button class="remove" (click)="removeArticle(article)"><i class="fa fa-times" aria-hidden="true"></i></button>
       </td>
     </tr>
     </tbody>

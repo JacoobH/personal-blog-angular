@@ -37,9 +37,9 @@ export class CommentComponent implements OnInit, OnChanges {
     // console.log(article + ',' + commentText + ',' + this.dateFormat(new Date()));
     const comment: Comment = new Comment(article, commentText, this.dateFormat(new Date()));
     this.commentService.addComment(comment)
-      .subscribe(comments => comment);
+      .subscribe(() => this.getComments(this.pageNo, this.pageSize, this.article));
     // 怎么保证后执行
-    this.getComments(this.pageNo, this.pageSize, this.article);
+    // this.getComments(this.pageNo, this.pageSize, this.article);
   }
 
   dateFormat(date: Date): string {

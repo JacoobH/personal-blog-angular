@@ -1,0 +1,27 @@
+<!--<div class="tag-panel">-->
+  <!--<h3>增加标签</h3>-->
+  <!--<input type="text" [(ngModel)]="tagsText"/>-->
+  <!--<button>提交</button><br>-->
+  <!--<footer>使用逗号分割标签</footer>-->
+  <!--<div *ngIf="tags">-->
+    <!--<button *ngFor="let tag of tags">{{tag.tag}}</button>-->
+  <!--</div>-->
+<!--</div>-->
+
+<div id="container">
+  <h2>《{{article.title}}》标签控制</h2><br>
+  <p>
+    <i class="fa fa-tags" aria-hidden="true"></i> 所有标签：
+    <button class="tag" *ngFor="let tag of tags" (click)="extendTagsText(tag)">
+      {{tag.tag}} <button class="remove-tag" (click)="removeTag(tag)" ><i class="fa fa-times" aria-hidden="true"></i></button>
+    </button>
+  </p>
+  <p>
+    <label for="myTag">此文章标签：</label><br>
+    <input id="myTag" type="text"
+           [(ngModel)]="tagsText"
+           placeholder="使用逗号分割标签">
+  </p>
+  <button class="submit" (click)="addTags()">提交</button>
+</div>
+

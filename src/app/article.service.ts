@@ -30,8 +30,18 @@ export class ArticleService {
     return this.http.get<number>(url, options);
   }
 
-  removeArticle(article: Article): Observable<Comment> {
+  removeArticle(article: Article): Observable<Article> {
     const url = `${this.articlesUrl}/remove`;
-    return this.http.post<Comment>(url, article);
+    return this.http.post<Article>(url, article);
+  }
+
+  addArticle(article: Article): Observable<Article> {
+    const url = `${this.articlesUrl}/add`;
+    return this.http.post<Article>(url, article);
+  }
+
+  modifyArticle(article: Article): Observable<Article> {
+    const url = `${this.articlesUrl}/modify`;
+    return this.http.post<Article>(url, article);
   }
 }

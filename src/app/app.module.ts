@@ -18,6 +18,9 @@ import { PlaceOnFileComponent } from './place-on-file/place-on-file.component';
 import { SignFormComponent } from './sign-form/sign-form.component';
 import { ManageComponent } from './manage/manage.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { EditBlogComponent } from './edit-blog/edit-blog.component';
+import { TagManageComponent } from './tag-manage/tag-manage.component';
+import { CommentManageComponent } from './comment-manage/comment-manage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +35,9 @@ import { MainPageComponent } from './main-page/main-page.component';
     SignFormComponent,
     ManageComponent,
     MainPageComponent,
+    EditBlogComponent,
+    TagManageComponent,
+    CommentManageComponent,
   ],
   imports: [
     BrowserModule,

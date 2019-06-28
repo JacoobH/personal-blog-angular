@@ -7,10 +7,13 @@ import {ArticleDetailComponent} from './article-detail/article-detail.component'
 import {SignFormComponent} from './sign-form/sign-form.component';
 import {ManageComponent} from './manage/manage.component';
 import {MainPageComponent} from './main-page/main-page.component';
-import {ArticleComponent} from './article/article.component';
+import {EditBlogComponent} from './edit-blog/edit-blog.component';
+import {TagManageComponent} from './tag-manage/tag-manage.component';
 
 const routes: Routes = [
   {path: 'mainPage', component: MainPageComponent},
+  {path: 'editBlog/:id', component: EditBlogComponent},
+  {path: 'tag/:id', component: TagManageComponent},
   {path: 'blogCard', component: BlogCardComponent},
   {path: 'manage', component: ManageComponent},
   {path: 'signForm', component: SignFormComponent},

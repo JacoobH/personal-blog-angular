@@ -13,7 +13,7 @@ export class ArticleDetailComponent implements OnInit {
   @Input()article: Article;
   constructor(
     private route: ActivatedRoute,
-    private heroService: ArticleService,
+    private articleService: ArticleService,
     private location: Location
   ) { }
 
@@ -22,7 +22,7 @@ export class ArticleDetailComponent implements OnInit {
   }
   getArticle(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.heroService.getArticle(id)
+    this.articleService.getArticle(id)
       .subscribe(article => this.article = article);
   }
 }
