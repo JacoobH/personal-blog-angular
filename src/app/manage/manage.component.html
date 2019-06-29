@@ -36,7 +36,7 @@
       <td>
         <!--<button class="modify" routerLink="/editBlog/{{article.id}}">修改</button>-->
         <button class="tags" routerLink="/tag/{{article.id}}"><i class="fa fa-tags" aria-hidden="true"></i></button>
-        <button class="comments" routerLink="/tag/{{article.id}}"><i class="fa fa-comments" aria-hidden="true"></i></button>
+        <button class="comments" routerLink="/commentManage/{{article.id}}"><i class="fa fa-comments" aria-hidden="true"></i></button>
         <button class="remove" (click)="removeArticle(article)"><i class="fa fa-times" aria-hidden="true"></i></button>
       </td>
     </tr>

@@ -28,14 +28,14 @@ export class CommentComponent implements OnInit, OnChanges {
   }
 
   getComments(pageNo: number, pageSize: number, article: Article): void {
-    this.commentService.getCommentsWithArticleId(pageNo, pageSize, article.id)
+    this.commentService.getCommentsWithArticleId(article.id,pageNo, pageSize, null)
       .subscribe(comments => this.comments = comments);
   }
 
 
   addComment(article: Article, commentText: string) {
     // console.log(article + ',' + commentText + ',' + this.dateFormat(new Date()));
-    const comment: Comment = new Comment(article, commentText, this.dateFormat(new Date()));
+    const comment: Comment = new Comment(null,article, commentText, this.dateFormat(new Date()));
     this.commentService.addComment(comment)
       .subscribe(() => this.getComments(this.pageNo, this.pageSize, this.article));
     // 怎么保证后执行

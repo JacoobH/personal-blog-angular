@@ -21,6 +21,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
 import { TagManageComponent } from './tag-manage/tag-manage.component';
 import { CommentManageComponent } from './comment-manage/comment-manage.component';
+import { SettingsComponent } from './settings/settings.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { CommentManageComponent } from './comment-manage/comment-manage.componen
     EditBlogComponent,
     TagManageComponent,
     CommentManageComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
