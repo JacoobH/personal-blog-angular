@@ -14,6 +14,10 @@ export class UserService {
     const url = `${this.userUrl}/login`;
     return this.http.post<boolean>(url, user);
   }
+  register(user: User) {
+    const url = `${this.userUrl}/add`;
+    return this.http.post(url, user);
+  }
 
   getInformation(user: User): Observable<User> {
     const url = `${this.userUrl}/getInformation`;

@@ -25,15 +25,15 @@
             </li>
             <li class="form-list__row">
               <label>用户名</label>
-              <input type="text" name="username" required [(ngModel)]="user.username"/>
+              <input type="text" name="username" required [(ngModel)]="user.username" min="6" max="16"/>
             </li>
             <li class="form-list__row">
               <label>密码</label>
-              <input type="password" name="password" required [(ngModel)]="user.password"/>
+              <input type="password" name="password" required [(ngModel)]="user.password" min="6" max="16"/>
             </li>
             <li class="form-list__row">
               <label>确认密码</label>
-              <input type="password" name="repassword"/>
+              <input type="password" name="repassword" required [(ngModel)]="repassword" min="6" max="16"/>
             </li>
             <li>
               <button type="submit" class="button" (click)="postFile(user.username,user.password,fileToUpload)">保存修改</button>

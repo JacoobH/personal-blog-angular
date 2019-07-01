@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 style="color: white;display: inline">《{{comments[0].article.title}}》评论管理</h1>
+      <button (click)="goBack()">返回</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <!--<button class="add" routerLink="/editBlog/-1"><i class="fa fa-plus" aria-hidden="true"></i> 增加</button>-->
+      <button class="refresh" (click)="refresh()"><i class="fa fa-refresh" aria-hidden="true"></i> 刷新</button>
+
+    </div>
+    <div class="col-md-4 offset-4">
+      <div class="form-group form-inline">
+        全文本搜索: <input class="form-control ml-2"
+                      type="text"
+                      [(ngModel)]="searchText"
+                      (change)="searchTextChanged(searchText)" placeholder="按文章标题进行搜索"/>
+      </div>
+    </div>
+  </div>
+  <table class="table table-striped" style="text-align: center; background-color: white; border-radius: 5px; opacity:0.85;">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">内容</th>
+      <th scope="col">发表时间</th>
+      <th scope="col">操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let comment of comments; index as i">
+      <th scope="row">{{ comment.id }}</th>
+      <td>
+        <!--<img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">-->
+        {{ comment.content }}
+      </td>
+      <td>{{ comment.time }}</td>
+      <td>
+        <!--&lt;!&ndash;<button class="modify" routerLink="/editBlog/{{article.id}}">修改</button>&ndash;&gt;-->
+        <!--<button class="tags" routerLink="/tag/{{article.id}}"><i class="fa fa-tags" aria-hidden="true"></i></button>-->
+        <!--<button class="comments" routerLink="/tag/{{article.id}}"><i class="fa fa-comments" aria-hidden="true"></i></button>-->
+        <button class="remove" (click)="removeComment(comment)"><i class="fa fa-times" aria-hidden="true"></i></button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-between p-2">
+    <ul class="pagination">
+      <li><a *ngIf="pageNo!=1" (click)="pageChanged(pageNo-1)">«</a></li>
+      <li *ngFor="let i of dotArr(dotNum).fill(1) ; let ix = index"
+          (click)="pageChanged(ix+1)">
+        <a [class.active]="ix+1 === pageNo">
+          {{ix+1}}
+        </a>
+      </li>
+      <li><a *ngIf="pageNo!=dotNum" (click)="pageChanged(pageNo+1)">»</a></li>
+    </ul>
+
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (click)="pageSizeChanged(pageSize)">
+      <option [ngValue]="5">每页5行</option>
+      <option [ngValue]="8">每页8行</option>
+      <option [ngValue]="10">每页10行</option>
+    </select>
+  </div>
+</div>

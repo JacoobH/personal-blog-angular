@@ -13,6 +13,7 @@ import {ActivatedRoute} from '@angular/router';
 export class SettingsComponent implements OnInit {
   username = this.route.snapshot.paramMap.get('username');
   user: User;
+  repassword: string;
   fileToUpload: File = null;
   url = '';
   constructor(public http: HttpClient,
@@ -41,12 +42,19 @@ export class SettingsComponent implements OnInit {
   }
 
   postFile(username:string, password:string, fileToUpload: File){
-    const endpoint = 'http://localhost:8080/user/modify';
-    const formData: FormData = new FormData();
-    formData.append('username', username);
-    formData.append('password', password);
-    formData.append('uploadPhoto', fileToUpload, fileToUpload.name);
-    this.http.post(endpoint, formData).subscribe(() => alert('修改成功'));
+    if (password = this.repassword){
+      const endpoint = 'http://localhost:8080/user/modify';
+      const formData: FormData = new FormData();
+      formData.append('username', username);
+      formData.append('password', password);
+      if (fileToUpload!=null){
+        formData.append('uploadPhoto', fileToUpload, fileToUpload.name);
+      }
+      this.http.post(endpoint, formData).subscribe(() => alert('修改成功'));
+    } else {
+      alert("两次密码输入不一致")
+    }
+
   }
 
 }
