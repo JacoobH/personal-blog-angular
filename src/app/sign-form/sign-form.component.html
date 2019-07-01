@@ -1,0 +1,51 @@
+<div class="login-wrap">
+  <div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab"> 登陆 </label>
+    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"> 注册 </label>
+    <div class="login-form">
+      <div class="sign-in-htm">
+        <div class="group">
+          <label for="user" class="label">用户名</label>
+          <input id="user" type="text" class="input" [(ngModel)]="loginUsername" minlength="6" maxlength="16">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">密码</label>
+          <input id="pass" type="password" class="input" data-type="password" [(ngModel)]="loginPassword" minlength="6" maxlength="16">
+        </div>
+        <div class="group">
+          <input id="check" type="checkbox" class="check" checked>
+          <label for="check"><span class="icon"></span> 自动登陆</label>
+        </div>
+        <div class="group">
+          <input type="submit" class="button" value="登陆" (click)="login(loginUsername,loginPassword)">
+        </div>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+          <a href="#forgot">忘记密码?</a>
+        </div>
+      </div>
+      <div class="sign-up-htm">
+        <div class="group">
+          <label for="user" class="label">用户名</label>
+          <input type="text" class="input" [(ngModel)]="registerUsername" minlength="6" maxlength="16">
+        </div>
+        <div class="group">
+          <label for="pass" class="label" >密码</label>
+          <input type="password" class="input" data-type="password" [(ngModel)]="registerPassword"  minlength="6" maxlength="16">
+        </div>
+        <div class="group">
+          <label for="pass" class="label" >重复密码</label>
+          <input type="password" class="input" data-type="password" [(ngModel)]="reRegisterPassword" minlength="6" maxlength="16">
+        </div>
+        <!--<div class="group">-->
+          <!--<label for="pass" class="label">电子邮箱</label>-->
+          <!--<input type="text" class="input">-->
+        <!--</div>-->
+        <div class="group">
+          <input type="submit" class="button" value="确认注册" (click)="register(registerUsername,registerPassword)">
+        </div>
+        <div class="hr"></div>
+      </div>
+    </div>
+  </div>
+</div>
